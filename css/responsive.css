@@ -1,0 +1,182 @@
+/* Responsive style */
+@media screen and (min-width: 910px) {
+    .profile-photo {
+        /* width: calc(100%/3); */
+    }
+
+    .primary-info {
+        width: 30%;
+        margin-right: auto;
+    }
+
+    .social-media {
+        margin-left: auto;
+    }
+
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 30%;
+        font-weight: 600;
+        font-size: 1em;
+    }
+
+    .company-name {
+        order: 1;
+        width: 70%;
+        text-align: right;
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
+    }
+
+    #work_experience > section {
+        padding-left: 1em;
+    }
+}
+
+@media screen and (min-width: 691px) and (max-width: 909px) {
+    .profile-photo {
+        order: -1;
+        width: 40%
+    }
+
+    .primary-info {
+        order: 1;
+        width: 40%;
+        margin: auto;
+    }
+
+    .social-media {
+        order: 2;
+        margin: auto;
+    }
+
+    .profile-photo > img {
+        display: block;
+        border-radius: 50%;
+        margin: 0.6em;
+    }
+
+    #menu {
+        position: fixed;
+        display: block;
+        top: 0.1em;
+        right: 0;
+        z-index: 999;
+    }
+
+    .social-media-link {
+        display: none;
+    }
+
+    .social-media ul li{
+        /* display: inline; */
+    }
+
+    .social-media ul {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 690px) {
+    .resume {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-container {
+        padding-top: 20px;
+    }
+
+    .profile-photo {
+        order: 0;
+        width: 100%;
+    }
+
+    .social-media {
+        order: 1;
+        width: 100%;
+    }
+
+    .primary-info {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-photo > img {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 50%;
+    }
+
+    #menu {
+        position: absolute;
+        display: block;
+        top: 0.1em;
+        right: 0;
+        z-index: 999;
+    }
+
+    nav {
+        z-index: 2;
+        background: rgb(8, 0, 0);
+        position: absolute;
+        top: 0;
+        right: -3305px;
+        width: 85%;
+        max-width: 400px;
+        height: 100%;
+        overflow-y: scroll;
+        transition: all 0.5s ease-out;
+        display: none;
+    }
+    nav.open {
+        opacity: 1;
+        top: 0;
+        right: 0 !important;
+        transition: all 0.5s ease-out;
+        display: block;
+    }
+
+    #nav-links {
+        background: black;
+    }
+
+    .social-media-link {
+        display: none;
+    }
+
+    .social-media ul li{
+        display: inline;
+    }
+
+    .social-media ul {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    #career_section {
+        width: 90%;
+    }
+
+    main {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

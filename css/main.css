@@ -1,0 +1,174 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+body {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #424242;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}  
+
+p {
+    text-align: justify;
+    font: 1em;
+    line-height: 1.7em;
+}
+.resume {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.profile-photo > img{
+    max-width: 220px;
+    max-height: 220px;
+}
+
+header {
+    background: #434E5E;
+    color: white;
+}
+
+.social-media-icons {
+    color: white;
+    margin-right: 0.5em;
+    text-decoration: none;
+}
+
+#menu{
+    display: none;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+.social-media > ul {
+    margin-top: 20px;
+}
+
+.social-media > ul > li {
+    margin: 10px 10px 10px 10px;
+}
+
+.header-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.primary-info {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.primary-info > h1 , .primary-info > h4{
+    letter-spacing: 0.1em;
+}
+
+#name {
+    margin-bottom: 0.125em;
+}
+
+#title {
+    margin-bottom: 1em;
+}
+
+#career_summary > p {
+}
+
+#career_section {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main {
+    margin-top: 50px;
+}
+
+nav {
+    display: none;
+}
+
+#resume_details_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+#work_experience {
+    order: 1;
+    width: 80%;
+}
+
+#work_experience {
+    padding-right: 3em;
+}
+
+#skill_set_container {
+    order: 2;
+    width: 20%;
+}
+
+h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.resume-title {
+    margin-bottom: 0.7em;
+    box-sizing: border-box;
+    padding-bottom: 0.7em;
+    color:#434E5E
+}
+
+.resume-title::after {
+    content: "";
+    position: relative;
+    width: 100%;
+    height: 1.5px;
+    margin-top: 0.4em;
+    background: #434E5E;
+    display: block;
+}
+
+.resume-position {
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.company-name {
+    font-weight: 300;
+    font-size: 1em;
+}
+
