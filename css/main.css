@@ -103,6 +103,7 @@ a {
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2em;
 }
 
 main {
@@ -121,16 +122,13 @@ nav {
 }
 
 #work_experience {
-    order: 1;
+    order: 0;
     width: 80%;
-}
-
-#work_experience {
     padding-right: 3em;
 }
 
 #skill_set_container {
-    order: 2;
+    order: 1;
     width: 20%;
 }
 
@@ -172,3 +170,31 @@ h3 {
     font-size: 1em;
 }
 
+#resume_timeline {
+    position: relative;
+    padding-left: 2em;
+}
+
+#resume_timeline::before {
+    content: "";
+    width: 3px;
+    height: 100%;
+    background: #aab4c3;
+    position: absolute;
+    left: 0em;
+}
+
+.job-details {
+    /* padding-left: 2em; */
+}
+
+.job-details::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    width: 15px;
+    height: 15px;
+    border: 4px solid #58677c;
+    background: white;
+    border-radius: 50%;
+}

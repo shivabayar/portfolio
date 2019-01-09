@@ -39,7 +39,7 @@
     }
 
     #work_experience > section {
-        padding-left: 1em;
+        /* padding-left: 1em; */
     }
 }
 
@@ -178,5 +178,36 @@
         width: 95%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    #work_experience {
+        order: 1;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #skill_set_container {
+        order: 2;
+        width: 100%;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 100%;
+        font-weight: 600;
+        font-size: 1em;
+    }
+
+    .company-name {
+        order: 1;
+        width: 100%;
+        text-align: right;
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
     }
 }
