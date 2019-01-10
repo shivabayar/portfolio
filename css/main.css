@@ -6,7 +6,7 @@ body, html {
   }
   
 body {
-    font-family: Roboto;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     font-size: 16px;
     color: #424242;
 }
@@ -29,6 +29,7 @@ p {
     text-align: justify;
     font: 1em;
     line-height: 1.7em;
+    font-weight: 400;
 }
 .resume {
     width: 80%;
@@ -160,14 +161,19 @@ h3 {
     display: block;
 }
 
-.resume-position {
-    font-weight: 600;
+.heavy-weight-font {
+    font-weight: 500;
+    font-size: 1.125em;
+}
+
+.medium-weight-font {
+    font-weight: 500;
     font-size: 1em;
 }
 
-.company-name {
+.light-weight-font {
     font-weight: 300;
-    font-size: 1em;
+    font-size: 0.925em;
 }
 
 #resume_timeline {
@@ -185,7 +191,7 @@ h3 {
 }
 
 .job-details {
-    /* padding-left: 2em; */
+    margin-bottom: 3em;
 }
 
 .job-details::before {
@@ -197,4 +203,47 @@ h3 {
     border: 4px solid #58677c;
     background: white;
     border-radius: 50%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 0.8em;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #fff;
+    background-color: #434E5E;
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    border-radius: 10rem;
+}
+
+.experience-year {
+    font-size: 0.825em !important;
+}
+
+.project-items-list {
+    list-style: disc;
+    margin-left: 2em;
+    margin-bottom: 1em;
+}
+
+.project-items-list > li {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    line-height: 1.5em;
+}
+
+.badges-list {
+    margin-top: 0.6em;
+    margin-bottom: 1em;
+}
+
+.badges-list > li {
+    display: inline;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
 }

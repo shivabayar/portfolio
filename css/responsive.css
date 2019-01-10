@@ -21,16 +21,12 @@
     .resume-position {
         order: 0;
         width: 30%;
-        font-weight: 600;
-        font-size: 1em;
     }
 
     .company-name {
         order: 1;
         width: 70%;
         text-align: right;
-        font-weight: 300;
-        font-size: 1em;
     }
 
     .experience-year {
@@ -39,7 +35,6 @@
     }
 
     #work_experience > section {
-        /* padding-left: 1em; */
     }
 }
 
@@ -194,20 +189,20 @@
     .resume-position {
         order: 0;
         width: 100%;
-        font-weight: 600;
-        font-size: 1em;
     }
 
     .company-name {
         order: 1;
         width: 100%;
         text-align: right;
-        font-weight: 300;
-        font-size: 1em;
     }
 
     .experience-year {
         order: 2;
         width: 100%;
+    }
+
+    .company-name {
+        padding-top: 1em;
     }
 }
