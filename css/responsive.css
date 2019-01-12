@@ -25,6 +25,7 @@
 
     .company-name {
         order: 1;
+        /* margin-left: auto; */
         width: 70%;
         text-align: right;
     }
@@ -83,6 +84,37 @@
         text-align: center;
     }
 
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 48%;
+    }
+
+    .company-name {
+        order: 1;
+        width: 50%;
+        text-align: right;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
+    }
+
+    #work_experience {
+        order: 1;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #skill_set_container {
+        order: 2;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 690px) {
@@ -185,24 +217,24 @@
         order: 2;
         width: 100%;
     }
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     .resume-position {
         order: 0;
-        width: 100%;
+        width: 48%;
     }
 
     .company-name {
         order: 1;
-        width: 100%;
+        width: 50%;
         text-align: right;
     }
 
     .experience-year {
         order: 2;
         width: 100%;
-    }
-
-    .company-name {
-        padding-top: 1em;
     }
 }

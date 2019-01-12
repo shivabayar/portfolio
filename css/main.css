@@ -252,3 +252,9 @@ h3 {
 .job-description {
     margin-bottom: 2em;
 }
+
+#comtel-logo {
+    width: 145px;
+    height: auto;
+    max-height: 145px;
+}
