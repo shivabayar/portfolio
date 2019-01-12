@@ -38,6 +38,7 @@ p {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
     box-sizing: border-box;
     margin-top: 30px;
+    margin-bottom: 150px;
 }
 
 .profile-photo > img{
@@ -246,4 +247,8 @@ h3 {
     display: inline;
     margin-left: 0.2em;
     margin-right: 0.2em;
+}
+
+.job-description {
+    margin-bottom: 2em;
 }
