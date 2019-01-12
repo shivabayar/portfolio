@@ -1,9 +1,5 @@
 /* Responsive style */
 @media screen and (min-width: 910px) {
-    .profile-photo {
-        /* width: calc(100%/3); */
-    }
-
     .primary-info {
         width: 30%;
         margin-right: auto;
@@ -72,10 +68,6 @@
 
     .social-media-link {
         display: none;
-    }
-
-    .social-media ul li{
-        /* display: inline; */
     }
 
     .social-media ul {
@@ -158,7 +150,7 @@
         z-index: 999;
     }
 
-    nav {
+    /* nav {
         z-index: 2;
         background: rgb(8, 0, 0);
         position: absolute;
@@ -170,18 +162,14 @@
         overflow-y: scroll;
         transition: all 0.5s ease-out;
         display: none;
-    }
-    nav.open {
+    } */
+    /* nav.open {
         opacity: 1;
         top: 0;
         right: 0 !important;
         transition: all 0.5s ease-out;
         display: block;
-    }
-
-    #nav-links {
-        background: black;
-    }
+    } */
 
     .social-media-link {
         display: none;
