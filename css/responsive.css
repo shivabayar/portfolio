@@ -31,6 +31,10 @@
         width: 100%;
     }
 
+    nav {
+        display: none !important;
+    }    
+
     #work_experience > section {
     }
 }
@@ -224,5 +228,13 @@
     .experience-year {
         order: 2;
         width: 100%;
+    }
+
+    nav {
+        background-color: #434E5E!important;
+    }
+
+    .navbar-toggler {
+        background: darkgoldenrod !important;
     }
 }
