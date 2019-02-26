@@ -71,6 +71,7 @@ let clickCounter = 0;
 let matchCounter = 0;
 let failCounter = 0;
 let deckQueue = [];
+let score = 3;
 
 deckSelector.addEventListener('click', function(events) {
     if(events && events.target && events.target.tagName.toLowerCase() === 'li') {
@@ -100,6 +101,7 @@ deckSelector.addEventListener('click', function(events) {
             //winning logic
             if(matchCounter * 2 === deckArray.length) {
                 console.log('Hip hip hurray!!!');
+                score = Math.ceil(3*((clickCounter - failCounter)/clickCounter));
             }
         } else if(clickCounter % 2 === 0
             && events.target.firstElementChild.className !==  deckQueue[0].firstElementChild.className) {
