@@ -1,0 +1,25 @@
+/* responsive styles */
+
+@media screen and (min-width: 691px) and (max-width: 909px) {
+    .deck {
+        width: 100%;
+        padding: 0px;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .deck {
+        width: 100%;
+        padding: 0px;
+    }
+    .deck .card {
+        max-height: 80px;
+        max-width: 80px;
+        min-width: 30px;
+        min-height: 30px
+    }
+}

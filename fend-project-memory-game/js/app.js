@@ -1,7 +1,22 @@
 /*
  * Create a list that holds all of your cards
  */
+const deckArray = ['fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
+                    'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple',
+                    'fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
+                    'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple'];
 
+const deckShuffledArray = split(shuffle(deckArray), 4);
+const deckSelector = document.querySelector('.deck');
+const counterElement = document.querySelector('.moves');
+const celebration = document.getElementById('confeti');
+let clickCounter = 0;
+let matchCounter = 0;
+let failCounter = 0;
+let deckQueue = [];
+
+celebration.style.display = 'none';
+buildDeck(deckShuffledArray);
 
 /*
  * Display the cards on the page
@@ -25,6 +40,14 @@ function shuffle(array) {
     return array;
 }
 
+//split array into matrix
+function split(arr, n) {
+    var res = [];
+    while (arr.length) {
+      res.push(arr.splice(0, n));
+    }
+    return res;
+}
 
 /*
  * set up the event listener for a card. If a card is clicked:
@@ -39,43 +62,43 @@ function shuffle(array) {
 
 // construct the the deck dom
 function buildDeck(deckArray) {
-    console.log(deckArray);
     const deckFragment = document.createDocumentFragment();
-    let deckUlElement = document.querySelector('.deck');
-    let i = 0;
+    let deckElement = document.querySelector('.deck');
+    let dummyIndex = 0;
+
     for(const deckArr of deckArray) {
-        const newLiElement = document.createElement('li');
-        const newIconElement = document.createElement('i');
-        const newSpanElement = document.createElement('span');
-        newSpanElement.innerText = ++i;
-        newSpanElement.style.display = 'none';
-        newSpanElement.className = 'dummy';
-        newLiElement.className = 'card';
-        newIconElement.className = deckArr;
-        newLiElement.appendChild(newIconElement);
-        newLiElement.appendChild(newSpanElement);
-        deckFragment.appendChild(newLiElement);
+        const newDivRowElement = document.createElement('div');
+        newDivRowElement.className = 'row';
+        for(const deck of deckArr) {
+            const newDivElement = document.createElement('div');
+            const newIconElement = document.createElement('i');
+            const newSpanElement = document.createElement('span');
+            newSpanElement.innerText = ++dummyIndex;
+            newSpanElement.style.display = 'none';
+            newSpanElement.className = 'dummy';
+            newDivElement.className = 'card';
+            newIconElement.className = deck;
+            newDivElement.appendChild(newIconElement);
+            newDivElement.appendChild(newSpanElement);
+            newDivRowElement.appendChild(newDivElement);
+        }
+        deckFragment.appendChild(newDivRowElement);
     }
-    deckUlElement.appendChild(deckFragment);
+    deckElement.appendChild(deckFragment);
 }
 
-const deckArray = ['fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
-                    'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple',
-                    'fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
-                    'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple'];
-buildDeck(shuffle(deckArray));
+//paint the stars
+function giveStarRatings(score) {
+    const stars = document.querySelector('.stars');
 
-const deckSelector = document.querySelector('.deck');
-const counterElement = document.querySelector('.moves');
-let clickCounter = 0;
-let matchCounter = 0;
-let failCounter = 0;
-let deckQueue = [];
-let score = 3;
-
+    for(let i = 0; i < score; ++i)
+        stars.children[i].firstElementChild.className = 'fa fa-star';
+}
+/*
+ * 
+ */
 deckSelector.addEventListener('click', function(events) {
-    if(events && events.target && events.target.tagName.toLowerCase() === 'li') {
-        console.log(events);
+    if(events && events.target && events.target.tagName.toLowerCase() === 'div') {
         if(deckQueue.length == 2)
             return;
 
@@ -99,9 +122,13 @@ deckSelector.addEventListener('click', function(events) {
             deckQueue = [];
 
             //winning logic
-            if(matchCounter * 2 === deckArray.length) {
-                console.log('Hip hip hurray!!!');
-                score = Math.ceil(3*((clickCounter - failCounter)/clickCounter));
+            if(matchCounter * 2 === deckShuffledArray.length * deckShuffledArray[0].length) {
+                celebration.style.display = 'block';
+                const score = Math.ceil(5*((clickCounter - failCounter)/clickCounter));
+                giveStarRatings(score);
+                setTimeout(function(){
+                    celebration.style.display = 'none';
+                }, 5000);
             }
         } else if(clickCounter % 2 === 0
             && events.target.firstElementChild.className !==  deckQueue[0].firstElementChild.className) {
@@ -115,4 +142,8 @@ deckSelector.addEventListener('click', function(events) {
             }, 1000);
         }
     }
+});
+
+document.querySelector('.restart').addEventListener('click', function() {
+    location.reload();
 });

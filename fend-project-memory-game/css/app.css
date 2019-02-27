@@ -16,6 +16,15 @@ body {
     padding: 0;
 }
 
+canvas {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
@@ -32,14 +41,13 @@ h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
-
-/*
- * Styles for the deck of cards
- */
-
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 50%;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -54,6 +62,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
+    margin: 5px 5px 5px 5px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -65,6 +74,10 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
     transition: transform 0.6s;
     transform-style: preserve-3d;
+}
+
+.card {
+    transform: rotateY(180deg);
 }
 
 .deck .card.open {
@@ -118,7 +131,7 @@ h1 {
     display: inline-block;
 }
 
-.score-panel .restart {
+.restart {
     float: right;
     cursor: pointer;
 }
