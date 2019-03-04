@@ -47,7 +47,7 @@ h1 {
     margin: auto;
 }
 .deck {
-    width: 50%;
+    width: 70%;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -134,4 +134,13 @@ h1 {
 .restart {
     float: right;
     cursor: pointer;
+}
+
+#timer {
+    display: flex;
+    width: 70%;
+}
+
+#moves_text {
+    margin: auto 0 auto auto;
 }

@@ -1,12 +1,13 @@
 /*
- * Create a list that holds all of your cards
+ * List that holds all of cards
  */
 const deckArray = ['fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
                     'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple',
                     'fab fa-github', 'fab fa-android', 'fab fa-amazon', 'fab fa-google',
                     'fab fa-facebook-f', 'fab fa-twitter', 'fab fa-instagram', 'fab fa-apple'];
 
-const deckShuffledArray = split(shuffle(deckArray), 4);
+const temp = shuffle(deckArray);
+const deckShuffledArray = split(temp, 4);
 const deckSelector = document.querySelector('.deck');
 const counterElement = document.querySelector('.moves');
 const celebration = document.getElementById('confeti');
@@ -99,8 +100,11 @@ function giveStarRatings(score) {
  */
 deckSelector.addEventListener('click', function(events) {
     if(events && events.target && events.target.tagName.toLowerCase() === 'div') {
-        if(deckQueue.length == 2)
+        if(deckQueue.length === 2 || events.target.classList.contains('open'))
             return;
+
+        if(clickCounter === 0)
+            timer();
 
         deckQueue.push(events.target);
         ++clickCounter;
@@ -124,13 +128,17 @@ deckSelector.addEventListener('click', function(events) {
             //winning logic
             if(matchCounter * 2 === deckShuffledArray.length * deckShuffledArray[0].length) {
                 celebration.style.display = 'block';
+                stop();
                 const score = Math.ceil(5*((clickCounter - failCounter)/clickCounter));
                 giveStarRatings(score);
+                $('#winning-modal').modal('show');
+                $('.modal-body')[0].innerText = "Congratulations!! You finished the challenge in " + h1.textContent
+                        + " with " + clickCounter + " steps..";
                 setTimeout(function(){
                     celebration.style.display = 'none';
                 }, 5000);
             }
-        } else if(clickCounter % 2 === 0
+        } else if(clickCounter % 2 === 0 //close the cards if they didn't match
             && events.target.firstElementChild.className !==  deckQueue[0].firstElementChild.className) {
             ++failCounter;
             setTimeout(function(){ 
@@ -144,6 +152,43 @@ deckSelector.addEventListener('click', function(events) {
     }
 });
 
-document.querySelector('.restart').addEventListener('click', function() {
+document.querySelector('#restart').addEventListener('click', function() {
     location.reload();
 });
+
+let h1 = document.getElementById('display'),
+    seconds = 0, minutes = 0, hours = 0,
+    t;
+
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00")
+                    + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00")
+                    + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+
+/* Stop button */
+function stop() {
+    clearTimeout(t);
+}
+
+/* Clear button */
+function clear() {
+    h1.textContent = "00:00:00";
+    seconds = 0; minutes = 0; hours = 0;
+}
