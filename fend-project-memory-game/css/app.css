@@ -115,8 +115,6 @@ h1 {
 
 .score-panel {
     text-align: left;
-    width: 50%;
-    margin-bottom: 10px;
 }
 
 .score-panel .stars {
@@ -148,3 +146,13 @@ h1 {
 .modal-title {
     width: 50%;
 }
+
+.fa-redo {
+    margin-left: 20px;
+}
+
+#reload {
+    display: flex;
+    flex-wrap: wrap;
+}
+

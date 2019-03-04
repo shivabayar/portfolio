@@ -92,8 +92,8 @@ function buildDeck(deckArray) {
 function giveStarRatings(score) {
     const stars = document.querySelector('.stars');
 
-    for(let i = 0; i < score; ++i)
-        stars.children[i].firstElementChild.className = 'fa fa-star';
+    for(let i = stars.children.length-1; i > 0 && i >= score ; --i)
+        stars.children[i].firstElementChild.className = 'far fa-star';
 }
 /*
  * 
@@ -150,12 +150,21 @@ deckSelector.addEventListener('click', function(events) {
                 deckQueue = [];
             }, 1000);
         }
+        
+        if(clickCounter % 16 === 0) {
+            const score = Math.ceil(5*((clickCounter - failCounter)/clickCounter));
+            giveStarRatings(score);
+        }
     }
 });
 
-document.querySelector('#restart').addEventListener('click', function() {
+const restartElements = document.getElementsByClassName('restart');
+
+function reloadPage() {
     location.reload();
-});
+}
+for(restartElement of restartElements)
+    restartElement.addEventListener('click', reloadPage, false);
 
 let h1 = document.getElementById('display'),
     seconds = 0, minutes = 0, hours = 0,
