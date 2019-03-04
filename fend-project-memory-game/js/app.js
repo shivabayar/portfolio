@@ -133,7 +133,7 @@ deckSelector.addEventListener('click', function(events) {
                 const score = Math.ceil(5*((clickCounter - failCounter)/clickCounter));
                 giveStarRatings(score);
                 $('#winning-modal').modal('show');
-                $('.modal-body')[0].innerText = "Congratulations!! You finished the challenge in " + h1.textContent
+                $('.modal-body')[0].innerText = "Congratulations!! You finished the challenge in " + getTimerText()
                         + " with " + clickCounter + " steps..";
                 setTimeout(function(){
                     celebration.style.display = 'none';
@@ -192,4 +192,14 @@ function stop() {
 function clear() {
     h1.textContent = "00:00:00";
     seconds = 0; minutes = 0; hours = 0;
+}
+
+function getTimerText() {
+    const splittedText = h1.textContent.split(':');
+
+    const hourText  = splittedText[0] === '00' ? '' : splittedText[0] + ' hour ';
+    const minuteText  = splittedText[1] === '00' ? '' : splittedText[1] + ' minutes ';
+    const secondText  = splittedText[2] === '00' ? '' : splittedText[2] + ' seconds';
+
+    return hourText + minuteText + secondText;
 }
