@@ -99,7 +99,8 @@ function giveStarRatings(score) {
  * 
  */
 deckSelector.addEventListener('click', function(events) {
-    if(events && events.target && events.target.tagName.toLowerCase() === 'div') {
+    if(events && events.target && events.target.tagName.toLowerCase() === 'div'
+      && events.target.classList.contains('card')) {
         if(deckQueue.length === 2 || events.target.classList.contains('open'))
             return;
 

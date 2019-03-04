@@ -17,8 +17,8 @@
         padding: 0px;
     }
     .deck .card {
-        max-height: 80px;
-        max-width: 80px;
+        max-height: 70px;
+        max-width: 70px;
         min-width: 30px;
         min-height: 30px
     }

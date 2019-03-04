@@ -115,7 +115,7 @@ h1 {
 
 .score-panel {
     text-align: left;
-    width: 345px;
+    width: 50%;
     margin-bottom: 10px;
 }
 
@@ -143,4 +143,8 @@ h1 {
 
 #moves_text {
     margin: auto 0 auto auto;
+}
+
+.modal-title {
+    width: 50%;
 }
