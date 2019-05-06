@@ -21,17 +21,19 @@ class Enemy {
         this.dt = dt;
         //when player touches the bug, the bug has to stop and start from the
         // 0th tile
-        if(dt === 0) {
+        if(this.dt === 0) {
             this.x = 0;
-            this.dt = getRandomInt(0, 200);
+            this.dt = 0;
         }
         this.x = this.x +  this.dt * this.randomInt;
 
         //when bug crosses the court
         if(this.x >= 505) {
             this.x = 0;
+            return -1;
         }
-        this.render();   
+        this.render();
+        return this.x;
     }
 
     // Draw the enemy on the screen, required method for game
