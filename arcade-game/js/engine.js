@@ -134,7 +134,7 @@ const Engine = (function(global) {
 
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
-            if (enemy.x < player.playerXPos + player.width  && enemy.x + enemy.width  > player.playerXPos &&
+            if (enemy.x < player.playerXPos + player.width  && enemy.x + enemy.width - centeringConstant  > player.playerXPos &&
                 enemy.y < player.playerYPos + player.height && enemy.y + enemy.height > player.playerYPos) {
                 //post collision, the speed of the collided bug should be 0 so that
                 //unintended collisions are avoided therefore avoding false scores
@@ -156,7 +156,6 @@ const Engine = (function(global) {
         allEnemies.forEach(function(enemy) {
             const x = enemy.update(dt);
             if(x === -1) {
-                debugger;
                 allEnemies.splice(allEnemies.indexOf(enemy), 1);
                 setTimeout(function() {
                     allEnemies.push(new Enemy(0, getRandomInt(1,3)*83-centeringConstant));

@@ -62,28 +62,34 @@ class Player {
     }
 
     handleInput(key) {
-        if(key === 'left') {
-            const newX = this.x - 1;
-            if(newX < 0)
-                return;
-            this.x = newX;
-        } else if(key === 'right') {
-            const newX = this.x + 1;
-            if(newX > 4)
-                return;
-            this.x = newX;
-            
-        } else if(key === 'up') {
-            const newY = this.y - 1;
-            if(newY < 0)
-                return;
-            this.y = newY;
-        } else if(key === 'down') {
-            const newY = this.y + 1;
-            if(newY > 5)
-                return;
-            this.y = newY;
+        let newX, newY;
+        switch(key) {
+            case 'left':
+                newX = this.x - 1;
+                if(newX < 0)
+                    return;
+                this.x = newX;
+                break
+            case 'right':
+                newX = this.x + 1;
+                if(newX > 4)
+                    return;
+                this.x = newX;
+                break;
+            case 'up':
+                newY = this.y - 1;
+                if(newY < 0)
+                    return;
+                this.y = newY;
+                break;
+            case 'down':
+                newY = this.y + 1;
+                if(newY > 5)
+                    return;
+                this.y = newY;
+                break;
         }
+
         if(this.y === 0) {
             this.score += 1;
             const scoreEle = document.getElementById('score');
