@@ -1,1 +1,1 @@
-<?php header("Location: https://shivabayar.github.io/portfolio/"); ?>
+<?php header("Location: http://www.shivrajs.come/"); ?>
