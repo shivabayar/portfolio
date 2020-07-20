@@ -1,1 +1,1 @@
-<?php header("Location: http://www.shivrajs.come/"); ?>
+<?php header("Location: http://www.shivrajs.com/"); ?>
