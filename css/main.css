@@ -76,19 +76,24 @@ header {
 
 .social-media > ul {
     margin-top: 20px;
+
 }
 
 .social-media > ul > li {
-    display: flex;
-    flex-direction: row;
-    margin: 10px 10px 10px 10px;
+    display: grid;
+    grid-template-areas: 'mediaIcon mediaLink';
+    grid-template-columns: 3rem auto;
 }
 
 .social-media > ul > li > div {
-    flex-basis: 10%;
+    grid-area: mediaIcon;
 }
 
-.header-container{
+.social-media > ul > li > .social-media-link{
+    grid-area: mediaLink;
+}
+
+.header-container {
     display: flex;
     flex-wrap: wrap;
 }

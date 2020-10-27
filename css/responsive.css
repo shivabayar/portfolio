@@ -21,7 +21,6 @@
 
     .company-name {
         order: 1;
-        /* margin-left: auto; */
         width: 70%;
         text-align: right;
     }
@@ -74,10 +73,17 @@
         display: none;
     }
 
-    .social-media ul {
+    .social-media > ul {
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
     }
 
     .position-details {
@@ -133,6 +139,19 @@
         width: 100%;
     }
 
+    .social-media > ul {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
+    }
+
     .primary-info {
         order: 2;
         width: 100%;
@@ -179,14 +198,17 @@
         display: none;
     }
 
-    .social-media ul li{
-        display: inline;
-    }
-
     .social-media ul {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
         margin-right: auto;
         margin-left: auto;
         text-align: center;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
     }
 
     #career_section {
