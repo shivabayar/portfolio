@@ -1,7 +1,7 @@
 /**
  * Service worker implementation
  */
-const staticCacheName = 'project-portfolio-v1';
+const staticCacheName = 'project-portfolio-v1.0';
 
 self.addEventListener('install', function(event) {
 	event.waitUntil(
