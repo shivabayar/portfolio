@@ -79,7 +79,13 @@ header {
 }
 
 .social-media > ul > li {
+    display: flex;
+    flex-direction: row;
     margin: 10px 10px 10px 10px;
+}
+
+.social-media > ul > li > div {
+    flex-basis: 10%;
 }
 
 .header-container{
