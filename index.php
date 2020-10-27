@@ -1,1 +1,1 @@
-<?php header("Location: https://shivrajs-website.herokuapp.com/index.html"); ?>
+<?php header("Location: index.html"); ?>
