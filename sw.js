@@ -8,7 +8,7 @@ self.addEventListener('install', function(event) {
 		caches.open(staticCacheName)
 		.then(function(cache) {
 			return cache.addAll([
-				'./index.html',
+				'./index-1.0.html',
                 './css/main.css',
                 './css/responsive.css',
                 './sw_register.js',
