@@ -6,8 +6,11 @@ body, html {
   }
   
 body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-family: "Open Sans","Helvetica Neue",helvetica,arial,sans-serif;
     color: #424242;
+    -webkit-font-smoothing: antialiased;
+    text-align: justify;
+    word-break: break-word;
 }
 
 .h2, h2 {
@@ -29,9 +32,8 @@ ul {
 }  
 
 p {
-    text-align: justify;
-    font: 1em;
-    line-height: 1.7em;
+    font-size: .875rem;
+    line-height: 1.5em;
     font-weight: 400;
 }
 .resume {
@@ -237,7 +239,9 @@ h3 {
 .project-items-list > li {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
+    font-size: .875rem;
     line-height: 1.5em;
+    font-weight: 400;
 }
 
 .badges-list {
@@ -292,4 +296,14 @@ footer {
 .skill-set-item .badge {
     background-color: #e9ecef;
     color: black;
+}
+
+.project-items-heading {
+    text-decoration: underline;
+}
+
+.project-items-text {
+    font-size: .875rem;
+    line-height: 1.5em;
+    font-weight: 400;
 }
