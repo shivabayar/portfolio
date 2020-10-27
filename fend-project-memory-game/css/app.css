@@ -42,33 +42,32 @@ h1 {
     font-weight: 300;
 }
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
+    display: grid;
+    grid-template-rows: auto auto auto auto;  
+    margin: 0;
+    grid-area: 'row';
+    grid-gap: 0.5rem 0.5rem;
 }
 .deck {
-    width: 70%;
+    display: grid;
+    grid-gap: 0.5rem 0.5rem;
+    grid-template-areas: 'row row row row';
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
 }
 
 .deck .card {
     height: 125px;
     width: 125px;
-    margin: 5px 5px 5px 5px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
-    display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
