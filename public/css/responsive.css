@@ -1,0 +1,262 @@
+/* Responsive style */
+@media screen and (min-width: 910px) {
+    .primary-info {
+        width: 30%;
+        margin-right: auto;
+    }
+
+    .social-media {
+        margin-left: auto;
+    }
+
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 30%;
+    }
+
+    .company-name {
+        order: 1;
+        width: 70%;
+        text-align: right;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
+    }
+
+    nav {
+        display: none !important;
+    }    
+
+    #work_experience > section {
+    }
+}
+
+@media screen and (min-width: 691px) and (max-width: 909px) {
+    .profile-photo {
+        order: -1;
+        width: 40%
+    }
+
+    .primary-info {
+        order: 1;
+        width: 40%;
+        margin: auto;
+    }
+
+    .social-media {
+        order: 2;
+        margin: auto;
+    }
+
+    .profile-photo > img {
+        display: block;
+        border-radius: 50%;
+        margin: 0.6em;
+    }
+
+    #menu {
+        position: fixed;
+        display: block;
+        top: 0.1em;
+        right: 0;
+        z-index: 999;
+    }
+
+    .social-media-link {
+        display: none;
+    }
+
+    .social-media > ul {
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
+    }
+
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 48%;
+    }
+
+    .company-name {
+        order: 1;
+        width: 50%;
+        text-align: right;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
+    }
+
+    #work_experience {
+        order: 1;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #skill_set_container {
+        order: 2;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .resume {
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-container {
+        padding-top: 20px;
+    }
+
+    .profile-photo {
+        order: 0;
+        width: 100%;
+    }
+
+    .social-media {
+        order: 1;
+        width: 100%;
+    }
+
+    .social-media > ul {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
+    }
+
+    .primary-info {
+        order: 2;
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-photo > img {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 50%;
+    }
+
+    #menu {
+        position: absolute;
+        display: block;
+        top: 0.1em;
+        right: 0;
+        z-index: 999;
+    }
+
+    /* nav {
+        z-index: 2;
+        background: rgb(8, 0, 0);
+        position: absolute;
+        top: 0;
+        right: -3305px;
+        width: 85%;
+        max-width: 400px;
+        height: 100%;
+        overflow-y: scroll;
+        transition: all 0.5s ease-out;
+        display: none;
+    } */
+    /* nav.open {
+        opacity: 1;
+        top: 0;
+        right: 0 !important;
+        transition: all 0.5s ease-out;
+        display: block;
+    } */
+
+    .social-media-link {
+        display: none;
+    }
+
+    .social-media ul {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+
+    .social-media > ul > li {
+        grid-template-areas: 'mediaIcon';
+        grid-template-columns: auto;
+    }
+
+    #career_section {
+        width: 90%;
+    }
+
+    main {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #work_experience {
+        order: 1;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    #skill_set_container {
+        order: 2;
+        width: 100%;
+    }
+    .position-details {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .resume-position {
+        order: 0;
+        width: 48%;
+    }
+
+    .company-name {
+        order: 1;
+        width: 50%;
+        text-align: right;
+    }
+
+    .experience-year {
+        order: 2;
+        width: 100%;
+    }
+
+    nav {
+        background-color: #434E5E!important;
+    }
+
+    .navbar-toggler {
+        background: darkgoldenrod !important;
+    }
+}

@@ -1,0 +1,36 @@
+/* responsive styles */
+
+@media screen and (min-width: 691px) and (max-width: 909px) {
+    .deck {
+        padding: 0px;
+        grid-gap: 1rem 1rem;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+
+    .row {
+        display: grid;
+        grid-gap: 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .deck {
+        display: grid;
+        grid-gap: .5rem .5rem;
+        width: 100%;
+        padding: 0px;
+    }
+    .deck .card {
+        max-height: 70px;
+        max-width: 70px;
+        min-width: 30px;
+        min-height: 30px
+    }
+    .row {
+        display: grid;
+        grid-gap: .5rem .5rem;
+    }
+}
