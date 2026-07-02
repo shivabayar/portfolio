@@ -1,53 +1,36 @@
 /**
- * Service worker implementation
+ * Kill-switch service worker.
+ *
+ * The site is now a single self-contained index.html served from GitHub Pages
+ * and no longer uses a service worker. Returning visitors may still have the
+ * OLD cache-first worker installed, which would keep serving them stale assets
+ * indefinitely. Their browser re-fetches THIS file on navigation, so this
+ * version unregisters itself, clears every cache it created, and reloads any
+ * open pages onto the fresh site.
  */
-const staticCacheName = 'project-portfolio-v1.0';
-
-self.addEventListener('install', function(event) {
-	event.waitUntil(
-		caches.open(staticCacheName)
-		.then(function(cache) {
-			return cache.addAll([
-				'./index-1.0.html',
-                './css/main.css',
-                './css/responsive.css',
-                './sw_register.js',
-                './images/comtel-large.png',
-                './images/comtel-small.png',
-                './images/extreme-large.jpg',
-                './images/extreme-small.jpg',
-                './images/hashedin.png',
-                './images/profile.jpg',
-                './images/s.png'
-			]);
-        })
-        .catch(error => console.error(error))
-	);
+self.addEventListener('install', function() {
+  // activate immediately instead of waiting for existing SW to be released
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', function(event) {
-	event.waitUntil(
-		caches.keys()
-		.then(function(cacheNames) {
-			return Promise.all(
-				cacheNames.filter(function(cacheName) {
-					return cacheName.startsWith('project-portfolio-') &&
-						   cacheName != staticCacheName;
-				}).map(function(cacheName) {
-					return caches.delete(cacheName);
-				})
-			);
-        })
-        .catch(error => console.error(error))
-	);
-})
+  event.waitUntil((async function() {
+    // drop all caches (old builds used names like 'project-portfolio-v1.0')
+    var keys = await caches.keys();
+    await Promise.all(keys.map(function(k) { return caches.delete(k); }));
 
+    // remove this worker so it never runs again
+    await self.registration.unregister();
+
+    // reload open clients so they pick up the live network version
+    var clients = await self.clients.matchAll({ type: 'window' });
+    clients.forEach(function(client) {
+      if ('navigate' in client) client.navigate(client.url);
+    });
+  })());
+});
+
+// while this worker is still briefly alive, never serve from cache — go to network
 self.addEventListener('fetch', function(event) {
-	event.respondWith(
-		caches.match(event.request)
-		.then(function(response) {
-			return response || fetch(event.request);
-        })
-        .catch(error => console.error(error))
-	);
+  event.respondWith(fetch(event.request));
 });
